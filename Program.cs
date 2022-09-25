@@ -1,8 +1,26 @@
 ﻿
 internal class Program
 {
+    static void Menu()
+    {
+        Console.Clear();
+        Console.WriteLine("Qual operação deseja realizar?");
+        Console.WriteLine("1 - Soma");
+        Console.WriteLine("2 - Subtração");
+        Console.WriteLine("3 - Multiplicação");
+        Console.WriteLine("5 - Divisão");
+        Console.WriteLine("--------------");
+        short res = short.Parse(Console.ReadLine());
+        switch (res)
+        {
+            case 1: Sum(); break;
+            case 2: Subtraction(); break;
+            case 3: Multiplication(); break;
+            case 4: Division(); break;
+        }
+    }
 
-    static void sum()
+    static void Sum()
     {
 
 
@@ -16,6 +34,8 @@ internal class Program
         float resultado = v1 + v2;
         Console.WriteLine("");
         Console.WriteLine("O resultado da soma é: " + resultado);
+        Console.ReadKey();
+        Menu();
     }
 
     static void Subtraction()
@@ -30,15 +50,44 @@ internal class Program
         Console.WriteLine("");
         Console.WriteLine($"Result is: {v1 - v2}");
         Console.ReadKey();
+        Menu();
 
     }
 
+    static void Division()
+    {
+        Console.Clear();
+        Console.WriteLine("First value:");
+        float v1 = float.Parse(Console.ReadLine());
+        Console.WriteLine("Second value:");
+        float v2 = float.Parse(Console.ReadLine());
 
+        Console.WriteLine("");
+        Console.WriteLine($"Result is: {v1 / v2}");
+        Console.ReadKey();
+        Menu();
+
+    }
+
+    static void Multiplication()
+    {
+
+        Console.Clear();
+        Console.WriteLine("First value:");
+        float v1 = float.Parse(Console.ReadLine());
+        Console.WriteLine("Second value:");
+        float v2 = float.Parse(Console.ReadLine());
+
+        Console.WriteLine("");
+        Console.WriteLine($"Result is: {v1 * v2}");
+        Console.ReadKey();
+        Menu();
+
+    }
     private static void Main(string[] args)
     {
 
-        Subtraction();//functions
-
+        Menu();
 
     }
 
